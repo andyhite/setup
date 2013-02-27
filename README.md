@@ -4,7 +4,13 @@ Installs everything I use in my development environment.
 
 ## Installation
 
-    zsh <(curl -s https://raw.github.com/andyhite/setup/master/mac)
+    zsh <(curl -s https://raw.github.com/andyhite/setup/master/mac.sh)
+
+## Credit
+
+This is heavily lifted from Thoughtbot's
+[Laptop](https://github.com/thoughtbot/laptop) script, with additions
+necessary to complete my own (custom) setup.
 
 ## Contributing
 
