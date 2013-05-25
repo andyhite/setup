@@ -84,11 +84,11 @@ echo "Installing openssl, because Ruby depends on it ..."
 echo "Installing RVM, for managing Rubies and gemsets ..."
   successfully curl -L https://get.rvm.io | bash -s stable --ruby
 
-echo "Installing Ruby 1.9.3-p392 ..."
-  successfully CC=gcc-4.2 rvm install 1.9.3-p392 --with-openssl-dir=/usr/local --without-tk --without-tcl
+echo "Installing Ruby 1.9.3 ..."
+  successfully CC=gcc-4.2 rvm install 1.9.3 --with-openssl-dir=/usr/local --without-tk --without-tcl
 
-echo "Setting Ruby 1.9.3-p392 as global default Ruby ..."
-  successfully rvm --default use 1.9.3-p392
+echo "Setting Ruby 1.9.3 as global default Ruby ..."
+  successfully rvm --default use 1.9.3
 
 echo "Update to latest Rubygems version ..."
   successfully gem update --system
@@ -105,9 +105,9 @@ echo "Installing the heroku-config plugin for pulling config variables locally t
 echo "Installing Janus, a collection of vim plugins and keybindings ..."
   successfully curl -Lo- https://bit.ly/janus-bootstrap | bash
 
-echo "Installing dotfiles ..."
-  successfully git clone git://github.com/andyhite/dotfiles.git ~/.dotfiles
-  successfully cd ~/.dotfiles && git submodule update --init && ./install.sh
+#echo "Installing dotfiles ..."
+  #successfully git clone git://github.com/andyhite/dotfiles.git ~/.dotfiles
+  #successfully cd ~/.dotfiles && git submodule update --init && ./install.sh
 
 echo "Your shell will now restart in order for changes to apply."
   exec $SHELL -l
