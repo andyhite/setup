@@ -8,7 +8,7 @@ fancy_echo() {
   echo "\n$1"
 }
 
-if -f /etc/zshenv; then
+if [ -f /etc/zshenv ]; then
   fancy_echo "Fixing OSX zsh environment bug ..."
     successfully sudo mv /etc/{zshenv,zshrc}
 fi
