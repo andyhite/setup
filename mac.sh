@@ -63,7 +63,7 @@ fancy_echo "Installing iTerm 2 ..."
   successfully brew cask install iterm2
 
 fancy_echo "Installing The Unarchiver ..."
-  successfully brew cask install the-unarchive
+  successfully brew cask install the-unarchiver
 
 fancy_echo "Installing VirtualBox ..."
   successfully brew cask install virtualbox
