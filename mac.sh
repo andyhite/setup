@@ -174,9 +174,10 @@ fancy_echo "Installing system libraries recommended for Ruby ..."
 
 fancy_echo "Installing RVM ..."
   successfully curl -L https://get.rvm.io | bash -s stable --ruby
+  successfully source ~/.rvm/scripts/rvm
 
 fancy_echo "Installing Ruby 1.9.3-p392 ..."
-  successfully CC=gcc-4.2 rvm install 1.9.3-p392 --with-openssl-dir=/usr/local --without-tk --without-tcl
+  successfully rvm install 1.9.3-p392 --with-openssl-dir=/usr/local --without-tk --without-tcl
 
 fancy_echo "Setting Ruby 1.9.3 as global default Ruby ..."
   successfully rvm --default use 1.9.3
