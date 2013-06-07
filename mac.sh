@@ -71,6 +71,10 @@ fancy_echo "Installing VirtualBox ..."
 fancy_echo "Installing VLC ..."
   successfully brew cask install vlc
 
+fancy_echo "Linking apps to the /Applications directory ..."
+  successfully brew cask linkapps
+  successfully mv -r ~/Applications/* /Applications/
+
 fancy_echo "Beginning installation of development tools ..."
 
 fancy_echo "Installing Ctags ..."
@@ -200,6 +204,13 @@ fancy_echo "Installing Janus, a collection of vim plugins and keybindings ..."
 fancy_echo "Installing dotfiles ..."
   successfully git clone git://github.com/andyhite/dotfiles.git ~/.dotfiles
   successfully cd ~/.dotfiles && git submodule update --init && ./install.sh
+
+fancy_echo "Installing Meslo LG L DZ for Powerline ..."
+  successfully open "~/.dotfiles/assets/meslo/MesloLGL-DZ-Regular-Powerline.ttf"
+
+fancy_echo "Configuring iTerm2 preferences ..."
+  successfully rm ~/.dotfiles/assets/iterm2/com.googlecode.iterm2.plist
+  successfully ln -s ~/.dotfiles/assets/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 
 fancy_echo "Your shell will now restart in order for changes to apply."
   exec $SHELL -l
