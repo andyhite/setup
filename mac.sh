@@ -16,6 +16,17 @@ fi
 fancy_echo "Switching to zshell ..."
   chsh -s /bin/zsh
 
+fancy_echo "Installing dotfiles ..."
+  successfully git clone git://github.com/andyhite/dotfiles.git ~/.dotfiles
+  successfully cd ~/.dotfiles && git submodule update --init && ./install.sh
+
+fancy_echo "Installing Meslo LG L DZ for Powerline ..."
+  successfully open "~/.dotfiles/assets/powerline-fonts/Meslo/Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline.otf"
+
+fancy_echo "Configuring iTerm2 preferences ..."
+  successfully rm ~/Library/Preferences/com.googlecode.iterm2.plist
+  successfully ln -s ~/.dotfiles/assets/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+
 fancy_echo "Checking for SSH key, generating one if it doesn't exist ..."
   [[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa
 
@@ -180,37 +191,17 @@ fancy_echo "Installing RVM ..."
   successfully curl -L https://get.rvm.io | bash -s stable --ruby
   successfully source ~/.rvm/scripts/rvm
 
-fancy_echo "Installing Ruby 1.9.3-p392 ..."
-  successfully rvm install 1.9.3-p392 --with-openssl-dir=/usr/local --without-tk --without-tcl
+fancy_echo "Installing ruby 2.0.0-p0 ..."
+  successfully rvm install 2.0.0-p0 --with-openssl-dir=`brew --prefix openssl` --without-tk --without-tcl
 
-fancy_echo "Setting Ruby 1.9.3 as global default Ruby ..."
-  successfully rvm --default use 1.9.3
+fancy_echo "Setting Ruby 2.0.0 as global default Ruby ..."
+  successfully rvm --default use 2.0.0
 
 fancy_echo "Update to latest Rubygems version ..."
   successfully gem update --system
 
 fancy_echo "Installing critical Ruby gems for Rails development ..."
   successfully gem install bundler foreman pg rails mysql unicorn --no-rdoc --no-ri
-
-fancy_echo "Installing standalone Heroku CLI client."
-  successfully brew install heroku-toolbelt
-
-fancy_echo "Installing the heroku-config plugin for pulling config variables locally to be used as ENV variables ..."
-  successfully heroku plugins:install git://github.com/ddollar/heroku-config.git
-
-fancy_echo "Installing Janus, a collection of vim plugins and keybindings ..."
-  successfully curl -Lo- https://bit.ly/janus-bootstrap | bash
-
-fancy_echo "Installing dotfiles ..."
-  successfully git clone git://github.com/andyhite/dotfiles.git ~/.dotfiles
-  successfully cd ~/.dotfiles && git submodule update --init && ./install.sh
-
-fancy_echo "Installing Meslo LG L DZ for Powerline ..."
-  successfully open "~/.dotfiles/assets/meslo/MesloLGL-DZ-Regular-Powerline.ttf"
-
-fancy_echo "Configuring iTerm2 preferences ..."
-  successfully rm ~/.dotfiles/assets/iterm2/com.googlecode.iterm2.plist
-  successfully ln -s ~/.dotfiles/assets/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 
 fancy_echo "Your shell will now restart in order for changes to apply."
   exec $SHELL -l
