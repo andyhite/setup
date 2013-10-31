@@ -16,17 +16,6 @@ fi
 fancy_echo "Switching to zshell ..."
   chsh -s /bin/zsh
 
-fancy_echo "Installing dotfiles ..."
-  successfully git clone git://github.com/andyhite/dotfiles.git ~/.dotfiles
-  successfully cd ~/.dotfiles && git submodule update --init && ./install.sh
-
-fancy_echo "Installing Meslo LG L DZ for Powerline ..."
-  successfully open "~/.dotfiles/assets/powerline-fonts/Meslo/Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline.otf"
-
-fancy_echo "Configuring iTerm2 preferences ..."
-  successfully rm ~/Library/Preferences/com.googlecode.iterm2.plist
-  successfully ln -s ~/.dotfiles/assets/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
-
 fancy_echo "Checking for SSH key, generating one if it doesn't exist ..."
   [[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa
 
@@ -51,12 +40,38 @@ fancy_echo "Installing Homebrew Cask ..."
 
 fancy_echo "Installing GNU Compiler Collection and dependencies ..."
   successfully brew install autoconf automake apple-gcc42
+  export CC=/usr/local/bin/gcc-4.2
+  export CXX=/usr/local/bin/c++-4.2
 
 fancy_echo "Installing Google Chrome ..."
   successfully brew cask install google-chrome
 
 fancy_echo "Installing Adium ..."
   successfully brew cask install adium
+
+fancy_echo "Installing Airmail Beta ..."
+  successfully brew cask install airmail-beta
+
+fancy_echo "Installing Propane ..."
+  successfully brew cask install propane
+
+fancy_echo "Installing Google Drive ..."
+  successfully brew cask install google-drive
+
+fancy_echo "Installing Flux ..."
+  successfully brew cask install flux
+
+fancy_echo "Installing YNAB ..."
+  successfully brew cask install you-need-a-budget
+
+fancy_echo "Installing Spotify ..."
+  successfully brew cask install spotify
+
+fancy_echo "Installing Fantastical ..."
+  successfully brew cask install fantastical
+
+fancy_echo "Installing Dropbox ..."
+  successfully brew cask install dropbox
 
 fancy_echo "Installing Alfred ..."
   successfully brew cask install alfred
@@ -69,6 +84,9 @@ fancy_echo "Installing Firefox ..."
 
 fancy_echo "Installing Growl Notify ..."
   successfully brew cask install growlnotify
+
+fancy_echo "Installing Mou ..."
+  successfully brew cask install mou
 
 fancy_echo "Installing iTerm 2 ..."
   successfully brew cask install iterm2
@@ -171,7 +189,7 @@ fancy_echo "Installing Tmux ..."
   successfully brew install tmux
 
 fancy_echo "Installing Vim ..."
-  successfully brew install vim
+  successfully brew install vim --with-python --with-ruby --with-perl
 
 fancy_echo "Installing Watch ..."
   successfully brew install watch
@@ -181,6 +199,13 @@ fancy_echo "Installing Wemux ..."
 
 fancy_echo "Installing Wget ..."
   successfully brew install wget
+
+fancy_echo "Installing Zsh ..."
+  successfully brew install zsh
+
+fancy_echo "Installing Powerline ..."
+  successfully pip install git+git://github.com/Lokaltog/powerline
+  successfully pip install git+git://github.com/xcambar/powerline-segment-battery
 
 fancy_echo "Beginning installation of Ruby environment ..."
 
@@ -202,6 +227,18 @@ fancy_echo "Update to latest Rubygems version ..."
 
 fancy_echo "Installing critical Ruby gems for Rails development ..."
   successfully gem install bundler foreman pg rails mysql unicorn --no-rdoc --no-ri
+
+fancy_echo "Installing dotfiles ..."
+  successfully git clone git://github.com/andyhite/dotfiles.git ~/.dotfiles
+  successfully cd ~/.dotfiles && git submodule update --init && ./install.sh
+  echo "Don't forget to create your local rc files!"
+
+fancy_echo "Installing Meslo LG L DZ for Powerline ..."
+  successfully open "~/.dotfiles/assets/powerline-fonts/Meslo/Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline.otf"
+
+fancy_echo "Configuring iTerm2 preferences ..."
+  successfully rm ~/Library/Preferences/com.googlecode.iterm2.plist
+  successfully ln -s ~/.dotfiles/assets/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 
 fancy_echo "Your shell will now restart in order for changes to apply."
   exec $SHELL -l
