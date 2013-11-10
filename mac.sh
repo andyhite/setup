@@ -62,7 +62,7 @@ fancy_echo "Installing Flux ..."
   successfully brew cask install flux
 
 fancy_echo "Installing YNAB ..."
-  successfully brew cask install you-need-a-budget
+  successfully brew cask install ynab
 
 fancy_echo "Installing Spotify ..."
   successfully brew cask install spotify
