@@ -59,7 +59,7 @@ fancy_echo "Installing Google Drive ..."
   successfully brew cask install google-drive
 
 fancy_echo "Installing Flux ..."
-  successfully brew cask install flux
+  successfully brew cask install f-lux
 
 fancy_echo "Installing YNAB ..."
   successfully brew cask install ynab
