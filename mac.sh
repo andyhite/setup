@@ -101,8 +101,7 @@ fancy_echo "Installing VLC ..."
   successfully brew cask install vlc
 
 fancy_echo "Linking apps to the /Applications directory ..."
-  successfully brew cask linkapps
-  successfully mv -r ~/Applications/* /Applications/
+  successfully mv ~/Applications/* /Applications/
 
 fancy_echo "Beginning installation of development tools ..."
 
