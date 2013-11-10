@@ -114,6 +114,7 @@ fancy_echo "Installing curl-ca-bundle ..."
 
 fancy_echo "Installing Elastic Search ..."
   successfully brew install elasticsearch
+  ln -sfv /usr/local/opt/elasticsearch/*.plist ~/Library/LaunchAgents
   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist
 
 fancy_echo "Installing Git ..."
@@ -134,6 +135,7 @@ fancy_echo "Installing ImageMagick ..."
 
 fancy_echo "Installing Memcached ..."
   successfully brew install memcached
+  ln -sfv /usr/local/opt/memcached/*.plist ~/Library/LaunchAgents
   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist
 
 fancy_echo "Installing Mercurial ..."
@@ -141,12 +143,14 @@ fancy_echo "Installing Mercurial ..."
 
 fancy_echo "Installing MySQL ..."
   successfully brew install mysql
+  ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
   successfully unset TMPDIR
   successfully mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
 
 fancy_echo "Installing Nginx ..."
   successfully brew install nginx
+  ln -sfv /usr/local/opt/nginx/*.plist ~/Library/LaunchAgents
   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
 
 fancy_echo "Installing Node.js ..."
@@ -158,6 +162,7 @@ fancy_echo "Installing Play ..."
 fancy_echo "Installing Postgres ..."
   successfully brew install postgres
   successfully initdb /usr/local/var/postgres -E utf8
+  ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 
 fancy_echo "Installing Python ..."
@@ -171,6 +176,7 @@ fancy_echo "Installing reattach-to-user-namespace ..."
 
 fancy_echo "Installing Redis ..."
   successfully brew install redis
+  ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
 
 fancy_echo "Installing Sbt ..."
