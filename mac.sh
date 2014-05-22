@@ -50,7 +50,7 @@ fancy_echo "Installing Adium ..."
   successfully brew cask install adium
 
 fancy_echo "Installing Airmail Beta ..."
-  successfully brew cask install airmail-beta
+  successfully brew cask install airmail
 
 fancy_echo "Installing Propane ..."
   successfully brew cask install propane
