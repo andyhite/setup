@@ -55,6 +55,18 @@ fancy_echo "Installing Airmail Beta ..."
 fancy_echo "Installing Propane ..."
   successfully brew cask install propane
 
+fancy_echo "Installing HipChat ..."
+  successfully brew cask install hipchat
+
+fancy_echo "Installing Knox ..."
+  successfully brew cask install knox
+
+fancy_echo "Installing Zoom.us ..."
+  successfully brew cask install zoomus
+
+fancy_echo "Installing OnePassword ..."
+  successfully brew cask install onepassword
+
 fancy_echo "Installing Google Drive ..."
   successfully brew cask install google-drive
 
@@ -123,9 +135,6 @@ fancy_echo "Installing Git ..."
 fancy_echo "Installing GitHub CLI ..."
   successfully brew install hub
 
-fancy_echo "Installing Go ..."
-  successfully brew install go
-
 fancy_echo "Installing Grep ..."
   successfully brew install homebrew/dupes/grep
 
@@ -136,9 +145,6 @@ fancy_echo "Installing Memcached ..."
   successfully brew install memcached
   ln -sfv /usr/local/opt/memcached/*.plist ~/Library/LaunchAgents
   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist
-
-fancy_echo "Installing Mercurial ..."
-  successfully brew install mercurial
 
 fancy_echo "Installing MySQL ..."
   successfully brew install mysql
@@ -154,9 +160,6 @@ fancy_echo "Installing Nginx ..."
 
 fancy_echo "Installing Node.js ..."
   successfully brew install node
-
-fancy_echo "Installing Play ..."
-  successfully brew install play
 
 fancy_echo "Installing Postgres ..."
   successfully brew install postgres
@@ -180,9 +183,6 @@ fancy_echo "Installing Redis ..."
 
 fancy_echo "Installing Sbt ..."
   successfully brew install sbt
-
-fancy_echo "Installing Scala ..."
-  successfully brew install scala
 
 fancy_echo "Installing The Silver Searcher ..."
   successfully brew install the_silver_searcher
@@ -227,8 +227,8 @@ fancy_echo "Installing RVM ..."
   successfully curl -L https://get.rvm.io | bash -s stable --ruby
   successfully source ~/.rvm/scripts/rvm
 
-fancy_echo "Installing ruby 2.0.0-p0 ..."
-  successfully rvm install 2.0.0-p0 --with-openssl-dir=`brew --prefix openssl` --without-tk --without-tcl
+fancy_echo "Installing ruby 2.0.0 ..."
+  successfully rvm install 2.0.0 --with-openssl-dir=`brew --prefix openssl` --without-tk --without-tcl
 
 fancy_echo "Setting Ruby 2.0.0 as global default Ruby ..."
   successfully rvm --default use 2.0.0
@@ -237,7 +237,7 @@ fancy_echo "Update to latest Rubygems version ..."
   successfully gem update --system
 
 fancy_echo "Installing critical Ruby gems for Rails development ..."
-  successfully gem install bundler foreman pg rails mysql unicorn --no-rdoc --no-ri
+  successfully gem install bundler rails--no-rdoc --no-ri
 
 fancy_echo "Installing dotfiles ..."
   successfully git clone git://github.com/andyhite/dotfiles.git ~/.dotfiles
