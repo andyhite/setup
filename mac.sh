@@ -242,10 +242,9 @@ fancy_echo "Installing dotfiles ..."
   echo "Don't forget to create your local rc files!"
 
 fancy_echo "Installing Meslo LG L DZ for Powerline ..."
-  successfully open "~/.dotfiles/assets/powerline-fonts/Meslo/Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline.otf"
+  successfully open ~/.dotfiles/assets/powerline-fonts/Meslo/Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline.otf
 
 fancy_echo "Configuring iTerm2 preferences ..."
-  successfully rm ~/Library/Preferences/com.googlecode.iterm2.plist
   successfully ln -s ~/.dotfiles/assets/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 
 fancy_echo "Your shell will now restart in order for changes to apply."
