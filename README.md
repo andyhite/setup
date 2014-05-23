@@ -4,7 +4,7 @@ Installs everything I use in my development environment.
 
 ## Installation
 
-    zsh <(curl -s https://raw.github.com/andyhite/setup/master/mac.sh)
+    zsh <(curl -s https://raw.githubusercontent.com/andyhite/setup/master/mac.sh)
 
 ## Credit
 
