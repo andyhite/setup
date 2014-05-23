@@ -14,6 +14,9 @@ fancy_echo "Updating mysql config ..."
 fancy_echo "Creating satisfaction development workspace ..."
   mkdir -p ~/Code/satisfaction
 
+fancy_echo "Sourcing RVM so it's available as a function ..."
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
 fancy_echo "Setting up consumer project ..."
   cd ~/Code/satisfaction
   successfully git clone git@github.com:satisfaction/consumer.git
