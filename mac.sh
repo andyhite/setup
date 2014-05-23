@@ -112,16 +112,16 @@ fancy_echo "Installing VirtualBox ..."
 fancy_echo "Installing VLC ..."
   successfully brew cask install vlc
 
-fancy_echo "Linking apps to the /Applications directory ..."
-  successfully mv ~/Applications/* /Applications/
+fancy_echo "Making sure homebrew-cask and Alfred play nice ..."
+  successfully brew alfred
 
 fancy_echo "Beginning installation of development tools ..."
 
+fancy_echo "Creating LaunchAgents directory ..."
+  successfully mkdir -p ~/Library/LaunchAgents
+
 fancy_echo "Installing Ctags ..."
   successfully brew install ctags
-
-fancy_echo "Installing curl-ca-bundle ..."
-  successfully brew install curl-ca-bundle
 
 fancy_echo "Installing Elastic Search ..."
   successfully brew install elasticsearch
@@ -181,17 +181,8 @@ fancy_echo "Installing Redis ..."
   ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
 
-fancy_echo "Installing Sbt ..."
-  successfully brew install sbt
-
 fancy_echo "Installing The Silver Searcher ..."
   successfully brew install the_silver_searcher
-
-fancy_echo "Installing Sphinx ..."
-  successfully brew install sphinx
-
-fancy_echo "Installing Sqlite ..."
-  successfully brew install sqlite
 
 fancy_echo "Installing Tig ..."
   successfully brew install tig
@@ -220,6 +211,9 @@ fancy_echo "Installing Powerline ..."
 
 fancy_echo "Beginning installation of Ruby environment ..."
 
+fancy_echo "Creating development workspace ..."
+  successfully mkdir -p ~/Code
+
 fancy_echo "Installing system libraries recommended for Ruby ..."
   successfully brew install gdbm libffi libksba libyaml openssl
 
@@ -227,17 +221,20 @@ fancy_echo "Installing RVM ..."
   successfully curl -L https://get.rvm.io | bash -s stable --ruby
   successfully source ~/.rvm/scripts/rvm
 
+fancy_echo "Hey RVM - SHHHHHH!"
+  successfully rvm rvmrc warning ignore all.rvmrcs
+
 fancy_echo "Installing ruby 2.0.0 ..."
-  successfully rvm install 2.0.0 --with-openssl-dir=`brew --prefix openssl` --without-tk --without-tcl
+  successfully rvm install 2.1 --with-openssl-dir=`brew --prefix openssl` --without-tk --without-tcl
 
 fancy_echo "Setting Ruby 2.0.0 as global default Ruby ..."
-  successfully rvm --default use 2.0.0
+  successfully rvm --default use 2.1
 
 fancy_echo "Update to latest Rubygems version ..."
   successfully gem update --system
 
 fancy_echo "Installing critical Ruby gems for Rails development ..."
-  successfully gem install bundler rails--no-rdoc --no-ri
+  successfully gem install bundler rails --no-rdoc --no-ri
 
 fancy_echo "Installing dotfiles ..."
   successfully git clone git://github.com/andyhite/dotfiles.git ~/.dotfiles
