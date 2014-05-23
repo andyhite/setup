@@ -20,7 +20,7 @@ fancy_echo "Setting up consumer project ..."
   cd ~/Code/satisfaction/consumer
   successfully git submodule update --init --recursive
   successfully rvm install ruby-1.9.3-p194-falcon --patch falcon
-  successfully rvm use ruby-1.9.3-p194-falcon
+  successfully rvm ruby-1.9.3-p194-falcon
   successfully rvm gemset create consumer
   successfully rvm gemset use consumer
   successfully bundle install
@@ -31,7 +31,7 @@ fancy_echo "Setting up satisfaction project ..."
   cd ~/Code/satisfaction/satisfaction
   successfully git submodule update --init --recursive
   successfully rvm install ree-1.8.7 --verify-downloads 1 
-  successfully rvm use ree-1.8.7
+  successfully rvm ree-1.8.7
   successfully rvm gemset create satisfaction
   successfully rvm gemset use satisfaction
   successfully bundle install
@@ -44,7 +44,7 @@ fancy_echo "Setting up services project ..."
   cd ~/Code/satisfaction/services
   successfully git submodule update --init --recursive
   successfully rvm install ruby-2.0.0-p247
-  successfully rvm use ruby-2.0.0-p247
+  successfully rvm ruby-2.0.0-p247
   successfully rvm gemset create services
   successfully rvm gemset use services
   successfully bundle install
@@ -54,7 +54,7 @@ fancy_echo "Setting up ironfan-homebase ..."
   successfully git clone git@github.com:satisfaction/ironfan-homebase.git
   cd ~/Code/satisfaction/ironfan-homebase
   successfully rvm install ruby-1.9.3-p194
-  successfully rvm use ruby-1.9.3-p194
+  successfully rvm ruby-1.9.3-p194
   successfully rvm gemset create ironfan-homebase
   successfully rvm gemset use ironfan-homebase
   successfully bundle install
@@ -68,7 +68,7 @@ fancy_echo "Setting up tools ..."
   cd ~/Code/satisfaction/tools
   successfully git submodule update --init --recursive
   successfully rvm install ruby-1.9.3-p448
-  successfully rvm use ruby-1.9.3-p448
+  successfully rvm ruby-1.9.3-p448
   successfully rvm gemset create tools
   successfully rvm gemset use tools
   successfully bundle install
