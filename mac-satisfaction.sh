@@ -22,10 +22,16 @@ fancy_echo "Setting up consumer project ..."
   successfully git clone git@github.com:satisfaction/consumer.git
   cd ~/Code/satisfaction/consumer
   successfully git submodule update --init --recursive
-  successfully rvm install ruby-1.9.3-p194-falcon --patch falcon
-  successfully rvm ruby-1.9.3-p194-falcon
-  successfully rvm gemset create consumer
-  successfully rvm gemset use consumer
+  successfully rvm install ruby-2.1.5
+  successfully rvm --create ruby-2.1.5@consumer
+  successfully bundle install
+
+fancy_echo "Setting up oneup project ..."
+  cd ~/Code/satisfaction
+  successfully git clone git@github.com:satisfaction/one-up.git
+  cd ~/Code/satisfaction/one-up
+  successfully rvm install ruby-2.1.5
+  successfully rvm --create ruby-2.1.5@one-up
   successfully bundle install
 
 fancy_echo "Setting up satisfaction project ..."
@@ -33,10 +39,8 @@ fancy_echo "Setting up satisfaction project ..."
   successfully git clone git@github.com:satisfaction/satisfaction.git
   cd ~/Code/satisfaction/satisfaction
   successfully git submodule update --init --recursive
-  successfully rvm install ree-1.8.7 --verify-downloads 1 
-  successfully rvm ree-1.8.7
-  successfully rvm gemset create satisfaction
-  successfully rvm gemset use satisfaction
+  successfully rvm install ree-1.8.7 --verify-downloads 1
+  successfully rvm --create ree-1.8.7@satisfaction
   successfully bundle install
   successfully cp config/database.yml.dev config/database.yml
   successfully bundle exec rake sfn:development:config
@@ -46,20 +50,26 @@ fancy_echo "Setting up services project ..."
   successfully git clone git@github.com:satisfaction/services.git
   cd ~/Code/satisfaction/services
   successfully git submodule update --init --recursive
-  successfully rvm install ruby-2.0.0-p247
-  successfully rvm ruby-2.0.0-p247
-  successfully rvm gemset create services
-  successfully rvm gemset use services
+  successfully rvm install ruby-2.1.5
+  successfully rvm --create ruby-2.1.5@services
   successfully bundle install
+
+fancy_echo "Setting up bizcon project ..."
+  cd ~/Code/satisfaction
+  successfully git clone git@github.com:satisfaction/bizcon.git
+  cd ~/Code/satisfaction/bizcon
+  cp config/environment{_sample,}.coffee && vim $_
+  successfully git submodule update --init --recursive
+  successfully npm install -g bower grunt-cli handlebars coffee-script mocha-phantomjs node-dev node-inspector
+  successfully npm install
+  successfully bower install
 
 fancy_echo "Setting up ironfan-homebase ..."
   cd ~/Code/satisfaction
   successfully git clone git@github.com:satisfaction/ironfan-homebase.git
   cd ~/Code/satisfaction/ironfan-homebase
   successfully rvm install ruby-1.9.3-p194
-  successfully rvm ruby-1.9.3-p194
-  successfully rvm gemset create ironfan-homebase
-  successfully rvm gemset use ironfan-homebase
+  successfully rvm --create ruby-1.9.3-p194@ironfan-homebase
   successfully bundle install
   successfully ln -s ~/Code/ironfan-homebase/knife ~/.chef
   successfully vim ~/.chef/credentials/andyhite.pem
@@ -71,9 +81,7 @@ fancy_echo "Setting up tools ..."
   cd ~/Code/satisfaction/tools
   successfully git submodule update --init --recursive
   successfully rvm install ruby-1.9.3-p448
-  successfully rvm ruby-1.9.3-p448
-  successfully rvm gemset create tools
-  successfully rvm gemset use tools
+  successfully rvm --create ruby-1.9.3-p448@tools
   successfully bundle install
   successfully ln -s ~/Code/satisfaction/tools /usr/local/bin
 

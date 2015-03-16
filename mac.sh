@@ -43,74 +43,27 @@ fancy_echo "Installing GNU Compiler Collection and dependencies ..."
   export CC=/usr/local/bin/gcc-4.2
   export CXX=/usr/local/bin/c++-4.2
 
-fancy_echo "Installing Google Chrome ..."
-  successfully brew cask install google-chrome
-
-fancy_echo "Installing Adium ..."
-  successfully brew cask install adium
-
-fancy_echo "Installing Airmail Beta ..."
+fancy_echo "Installing applications ..."
   successfully brew cask install airmail
-
-fancy_echo "Installing Propane ..."
-  successfully brew cask install propane
-
-fancy_echo "Installing HipChat ..."
-  successfully brew cask install hipchat
-
-fancy_echo "Installing Knox ..."
-  successfully brew cask install knox
-
-fancy_echo "Installing Zoom.us ..."
-  successfully brew cask install zoomus
-
-fancy_echo "Installing OnePassword ..."
-  successfully brew cask install onepassword
-
-fancy_echo "Installing Google Drive ..."
-  successfully brew cask install google-drive
-
-fancy_echo "Installing Flux ..."
-  successfully brew cask install flux
-
-fancy_echo "Installing YNAB ..."
-  successfully brew cask install ynab
-
-fancy_echo "Installing Spotify ..."
-  successfully brew cask install spotify
-
-fancy_echo "Installing Fantastical ..."
-  successfully brew cask install fantastical
-
-fancy_echo "Installing Dropbox ..."
-  successfully brew cask install dropbox
-
-fancy_echo "Installing Alfred ..."
   successfully brew cask install alfred
-
-fancy_echo "Installing Divvy ..."
   successfully brew cask install divvy
-
-fancy_echo "Installing Firefox ..."
+  successfully brew cask install dropbox
+  successfully brew cask install fantastical
   successfully brew cask install firefox
-
-fancy_echo "Installing Growl Notify ..."
-  successfully brew cask install growlnotify
-
-fancy_echo "Installing Mou ..."
-  successfully brew cask install mou
-
-fancy_echo "Installing iTerm 2 ..."
+  successfully brew cask install flux
+  successfully brew cask install google-chrome
+  successfully brew cask install google-drive
   successfully brew cask install iterm2
-
-fancy_echo "Installing The Unarchiver ..."
+  successfully brew cask install knox
+  successfully brew cask install mou
+  successfully brew cask install onepassword
+  successfully brew cask install slack
+  successfully brew cask install spotify
   successfully brew cask install the-unarchiver
-
-fancy_echo "Installing VirtualBox ..."
   successfully brew cask install virtualbox
-
-fancy_echo "Installing VLC ..."
   successfully brew cask install vlc
+  successfully brew cask install ynab
+  successfully brew cask install zoomus
 
 fancy_echo "Making sure homebrew-cask and Alfred play nice ..."
   successfully brew alfred
@@ -167,6 +120,11 @@ fancy_echo "Installing Postgres ..."
   ln -sfv /usr/local/opt/postgres/*.plist ~/Library/LaunchAgents
   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 
+fancy_echo "Installing Rabbit MQ ..."
+  successfully brew install rabbitmq
+  ln -sfv /usr/local/opt/rabbitmq/*.plist ~/Library/LaunchAgents
+  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.rabbitmq.plist
+
 fancy_echo "Installing Python ..."
   successfully brew install python
 
@@ -204,6 +162,12 @@ fancy_echo "Installing Wget ..."
 
 fancy_echo "Installing Zsh ..."
   successfully brew install zsh
+
+fancy_echo "Installing node.js ..."
+  successfully brew install node
+
+fancy_echo "Installing phantom.js ..."
+  successfully brew install phantomjs
 
 fancy_echo "Installing Powerline ..."
   successfully pip install git+git://github.com/Lokaltog/powerline
