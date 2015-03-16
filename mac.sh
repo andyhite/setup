@@ -30,7 +30,7 @@ fancy_echo "Fixing permissions ..."
 fancy_echo "Beginning installation of applications ..."
 
 fancy_echo "Installing Homebrew ..."
-  successfully ruby <(curl -fsS https://raw.githubusercontent.com/Homebrew/homebrew/go/install)
+  successfully ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   successfully brew update
   successfully brew tap homebrew/dupes
 
