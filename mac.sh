@@ -52,7 +52,7 @@ fancy_echo "Installing general applications ..."
   successfully brew cask install intellij-idea
   successfully brew cask install iterm2
   successfully brew cask install java
-  successfully brew cask install onepassword
+  successfully brew cask install 1password
   successfully brew cask install slack
   successfully brew cask install spotify
   successfully brew cask install spotify-notifications
