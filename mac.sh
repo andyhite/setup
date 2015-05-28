@@ -66,6 +66,7 @@ fancy_echo "Beginning installation of development tools ..."
   successfully brew install git
   successfully brew install git-extras
   successfully brew install grep
+  successfully brew install python
   successfully brew install reattach-to-user-namespace
   successfully brew install the_silver_searcher
   successfully brew install tig
