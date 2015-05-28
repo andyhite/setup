@@ -76,6 +76,7 @@ fancy_echo "Beginning installation of development tools ..."
   successfully brew install wemux
   successfully brew install wget
   successfully brew install zsh
+  successfully pip install --upgrade pip
   successfully pip install git+git://github.com/Lokaltog/powerline
   successfully pip install git+git://github.com/xcambar/powerline-segment-battery
 
